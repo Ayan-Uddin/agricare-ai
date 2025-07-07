@@ -1,1 +1,317 @@
-index.html
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Agricare AI
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #e8f5e9;
+    }
+  </style>
+ </head>
+ <body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-green-700 text-white shadow-md">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <div class="flex items-center space-x-3">
+     <img alt="Green leaf logo symbolizing agriculture and nature" class="h-10 w-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/6706d850-278b-4465-aaea-5c8c76120177.jpg" width="40"/>
+     <h1 class="text-xl font-bold tracking-wide">
+      Agricare AI
+     </h1>
+    </div>
+    <nav class="hidden md:flex space-x-8 font-semibold">
+     <a class="hover:text-green-300 transition" href="#welcome">
+      Home
+     </a>
+     <a class="hover:text-green-300 transition" href="#analyze">
+      Analyze
+     </a>
+     <a class="hover:text-green-300 transition" href="#crops">
+      Crops
+     </a>
+     <a class="hover:text-green-300 transition" href="#weather">
+      Weather
+     </a>
+     <a class="hover:text-green-300 transition" href="#settings">
+      Settings
+     </a>
+    </nav>
+    <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars text-2xl">
+     </i>
+    </button>
+   </div>
+   <!-- Mobile menu -->
+   <nav class="hidden md:hidden bg-green-600 text-white px-4 py-3 space-y-2" id="mobile-menu">
+    <a class="block hover:text-green-300 transition" href="#welcome">
+     Home
+    </a>
+    <a class="block hover:text-green-300 transition" href="#analyze">
+     Analyze
+    </a>
+    <a class="block hover:text-green-300 transition" href="#crops">
+     Crops
+    </a>
+    <a class="block hover:text-green-300 transition" href="#weather">
+     Weather
+    </a>
+    <a class="block hover:text-green-300 transition" href="#settings">
+     Settings
+    </a>
+   </nav>
+  </header>
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+   <!-- Welcome Screen -->
+   <section class="bg-green-50 rounded-lg shadow-md p-8 flex flex-col items-center text-center" id="welcome">
+    <h2 class="text-3xl font-bold text-green-700 mb-4">
+     WELCOME TO AGRICARE AI
+    </h2>
+    <p class="text-green-800 text-lg max-w-xl mb-6">
+     Your smart assistant for agriculture, providing crop information, weather forecasts, and AI-powered analysis.
+    </p>
+    <img alt="A scenic farm field with sunrise and lush green crops symbolizing agriculture and growth" class="rounded-lg shadow-lg w-full max-w-3xl object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/0eef51b9-fd87-42ec-0f01-68653f3f4e16.jpg" width="600"/>
+   </section>
+   <!-- Image Capture / Analyze Screen -->
+   <section class="bg-white rounded-lg shadow-md p-8" id="analyze">
+    <h2 class="text-2xl font-bold text-green-700 mb-6 text-center">
+     Analyze Crop Images
+    </h2>
+    <div class="flex flex-col md:flex-row md:space-x-8 items-center justify-center">
+     <div class="w-full md:w-1/2 mb-6 md:mb-0">
+      <img alt="Placeholder image showing no crop image captured yet" class="rounded-lg shadow-md w-full object-cover" height="300" id="captured-image" src="https://storage.googleapis.com/a1aa/image/1ae3ae53-aed2-4a5d-968e-4778e264f63f.jpg" width="400"/>
+     </div>
+     <div class="flex flex-col space-y-4 w-full md:w-1/2 max-w-sm">
+      <button class="bg-green-700 hover:bg-green-800 text-white font-semibold py-3 rounded shadow transition" id="capture-btn">
+       <i class="fas fa-camera mr-2">
+       </i>
+       Capture Image
+      </button>
+      <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded shadow transition" id="upload-btn">
+       <i class="fas fa-upload mr-2">
+       </i>
+       Upload Image
+      </button>
+      <div class="mt-4 p-4 bg-green-100 rounded text-green-900 font-medium hidden" id="analysis-result">
+       AI analysis results will appear here after image capture or upload.
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Crop Information Screen -->
+   <section class="bg-green-50 rounded-lg shadow-md p-8" id="crops">
+    <h2 class="text-2xl font-bold text-green-700 mb-6 text-center">
+     Crop Information
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+     <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+      <img alt="Golden wheat field with ripe ears ready for harvest under a clear blue sky" class="rounded mb-4 object-cover h-48 w-full" height="250" src="https://storage.googleapis.com/a1aa/image/0c79d827-c438-4a92-bb35-0b35c6023b19.jpg" width="400"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-2">
+       Wheat
+      </h3>
+      <p class="text-green-700 flex-grow">
+       Wheat is a staple crop grown worldwide, requiring moderate rainfall and well-drained soil.
+      </p>
+     </article>
+     <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+      <img alt="Lush green rice paddy field flooded with water under a bright sky" class="rounded mb-4 object-cover h-48 w-full" height="250" src="https://storage.googleapis.com/a1aa/image/94f555d4-b0e1-408a-72d1-2a523d7666d8.jpg" width="400"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-2">
+       Rice
+      </h3>
+      <p class="text-green-700 flex-grow">
+       Rice thrives in warm, wet environments and is a primary food source for over half the world’s population.
+      </p>
+     </article>
+     <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+      <img alt="Tall green maize corn plants growing in a sunny field with blue sky" class="rounded mb-4 object-cover h-48 w-full" height="250" src="https://storage.googleapis.com/a1aa/image/3da3ccb3-cd89-4eca-6489-ff772ecf6a13.jpg" width="400"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-2">
+       Maize
+      </h3>
+      <p class="text-green-700 flex-grow">
+       Maize is a versatile crop used for food, feed, and biofuel, requiring warm weather and fertile soil.
+      </p>
+     </article>
+     <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+      <img alt="Green soybean plants growing densely in a field under a clear blue sky" class="rounded mb-4 object-cover h-48 w-full" height="250" src="https://storage.googleapis.com/a1aa/image/1db32ef0-4d2c-48b6-34e8-c2813ad6387e.jpg" width="400"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-2">
+       Soybean
+      </h3>
+      <p class="text-green-700 flex-grow">
+       Soybean is a high-protein legume crop used for oil and animal feed, preferring warm climates.
+      </p>
+     </article>
+     <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+      <img alt="Green potato plants with white flowers growing in a cultivated field" class="rounded mb-4 object-cover h-48 w-full" height="250" src="https://storage.googleapis.com/a1aa/image/36546bd9-fe68-42ab-5857-8c7c5a4d4294.jpg" width="400"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-2">
+       Potato
+      </h3>
+      <p class="text-green-700 flex-grow">
+       Potatoes grow best in cool climates with loose, well-drained soil and are a major food crop worldwide.
+      </p>
+     </article>
+     <article class="bg-white rounded-lg shadow p-6 flex flex-col">
+      <img alt="Tomato plants with ripe red tomatoes hanging on the vine in a greenhouse" class="rounded mb-4 object-cover h-48 w-full" height="250" src="https://storage.googleapis.com/a1aa/image/fa8f6f00-aa16-4e4d-8c0e-e93af20d141c.jpg" width="400"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-2">
+       Tomato
+      </h3>
+      <p class="text-green-700 flex-grow">
+       Tomatoes require warm weather and plenty of sunlight, widely cultivated for fresh consumption and cooking.
+      </p>
+     </article>
+    </div>
+   </section>
+   <!-- Weather Forecast Screen -->
+   <section class="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto" id="weather">
+    <h2 class="text-2xl font-bold text-green-700 mb-6 text-center">
+     Weather Forecast
+    </h2>
+    <div class="flex flex-col sm:flex-row justify-around items-center space-y-6 sm:space-y-0 sm:space-x-6">
+     <div class="bg-green-50 rounded-lg p-6 w-full sm:w-1/3 text-center shadow">
+      <img alt="Icon showing bright sun representing sunny weather" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/60e9daea-974c-4787-f5f9-8cf5725bba51.jpg" width="100"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-1">
+       Today
+      </h3>
+      <p class="text-green-700 text-xl font-bold">
+       28°C
+      </p>
+      <p class="text-green-600">
+       Sunny
+      </p>
+     </div>
+     <div class="bg-green-50 rounded-lg p-6 w-full sm:w-1/3 text-center shadow">
+      <img alt="Icon showing clouds representing cloudy weather" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/e636c8dc-fd48-4ede-ea53-b18621e30d16.jpg" width="100"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-1">
+       Tomorrow
+      </h3>
+      <p class="text-green-700 text-xl font-bold">
+       25°C
+      </p>
+      <p class="text-green-600">
+       Cloudy
+      </p>
+     </div>
+     <div class="bg-green-50 rounded-lg p-6 w-full sm:w-1/3 text-center shadow">
+      <img alt="Icon showing raindrops representing rainy weather" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/4296f686-8d0f-43b1-0487-2e2c580e982e.jpg" width="100"/>
+      <h3 class="text-lg font-semibold text-green-800 mb-1">
+       Day After
+      </h3>
+      <p class="text-green-700 text-xl font-bold">
+       22°C
+      </p>
+      <p class="text-green-600">
+       Rain Showers
+      </p>
+     </div>
+    </div>
+    <p class="mt-6 text-center text-green-700 font-medium">
+     Weather prediction will be integrated here.
+    </p>
+   </section>
+   <!-- Settings Screen -->
+   <section class="bg-green-50 rounded-lg shadow-md p-8 max-w-3xl mx-auto text-center" id="settings">
+    <h2 class="text-2xl font-bold text-green-700 mb-6">
+     Settings
+    </h2>
+    <p class="text-green-800 mb-6">
+     Settings options will be shown here.
+    </p>
+    <button class="bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-6 rounded shadow transition mb-4 w-full max-w-xs mx-auto">
+     <i class="fas fa-user-cog mr-2">
+     </i>
+     Account Settings
+    </button>
+    <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded shadow transition w-full max-w-xs mx-auto">
+     <i class="fas fa-cog mr-2">
+     </i>
+     App Preferences
+    </button>
+   </section>
+  </main>
+  <!-- Bottom Navigation Bar -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-300 shadow-inner md:hidden">
+   <ul class="flex justify-around text-green-700">
+    <li>
+     <a class="flex flex-col items-center py-2 px-3 hover:bg-green-100 transition" href="#welcome">
+      <i class="fas fa-home text-xl">
+      </i>
+      <span class="text-xs font-semibold mt-1">
+       Home
+      </span>
+     </a>
+    </li>
+    <li>
+     <a class="flex flex-col items-center py-2 px-3 hover:bg-green-100 transition" href="#analyze">
+      <i class="fas fa-camera-alt text-xl">
+      </i>
+      <span class="text-xs font-semibold mt-1">
+       Analyze
+      </span>
+     </a>
+    </li>
+    <li>
+     <a class="flex flex-col items-center py-2 px-3 hover:bg-green-100 transition" href="#crops">
+      <i class="fas fa-eco text-xl">
+      </i>
+      <span class="text-xs font-semibold mt-1">
+       Crops
+      </span>
+     </a>
+    </li>
+    <li>
+     <a class="flex flex-col items-center py-2 px-3 hover:bg-green-100 transition" href="#weather">
+      <i class="fas fa-cloud-sun text-xl">
+      </i>
+      <span class="text-xs font-semibold mt-1">
+       Weather
+      </span>
+     </a>
+    </li>
+    <li>
+     <a class="flex flex-col items-center py-2 px-3 hover:bg-green-100 transition" href="#settings">
+      <i class="fas fa-cog text-xl">
+      </i>
+      <span class="text-xs font-semibold mt-1">
+       Settings
+      </span>
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <script>
+   // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Image capture and upload simulation
+    const captureBtn = document.getElementById('capture-btn');
+    const uploadBtn = document.getElementById('upload-btn');
+    const capturedImage = document.getElementById('captured-image');
+    const analysisResult = document.getElementById('analysis-result');
+
+    captureBtn.addEventListener('click', () => {
+      // Simulate image capture by changing image to a placeholder of a crop leaf
+      capturedImage.src = 'https://placehold.co/400x300/png?text=Captured+Crop+Leaf+Image';
+      capturedImage.alt = 'Captured image of a crop leaf showing green healthy foliage';
+      analysisResult.textContent = 'Analyzing captured image... Healthy crop detected.';
+      analysisResult.classList.remove('hidden');
+    });
+
+    uploadBtn.addEventListener('click', () => {
+      // Simulate image upload by changing image to a placeholder of a diseased leaf
+      capturedImage.src = 'https://placehold.co/400x300/png?text=Uploaded+Crop+Leaf+Image';
+      capturedImage.alt = 'Uploaded image of a crop leaf showing signs of disease with brown spots';
+      analysisResult.textContent = 'Analyzing uploaded image... Signs of disease detected. Please consult an expert.';
+      analysisResult.classList.remove('hidden');
+    });
+  </script>
+ </body>
+</html>
