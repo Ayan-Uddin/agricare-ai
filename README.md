@@ -1,1 +1,1 @@
-# agricare-ai
+agricare-ai
